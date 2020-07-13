@@ -3,7 +3,11 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    setTimeout(() => window.location.reload(), 1000);
+    const link = document.createElement("a");
+    link.target = "_blank";
+    link.href = window.location.href;
+    link.setAttribute("visibility", "hidden");
+    link.click();
   }, []);
 
   return (
